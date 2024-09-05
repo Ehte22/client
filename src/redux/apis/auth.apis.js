@@ -23,7 +23,7 @@ export const authApi = createApi({
 
                 },
                 transformErrorResponse: (response) => {
-                    return response.data
+                    toast.error(response.data.error)
                 }
             }),
         }

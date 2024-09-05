@@ -20,6 +20,9 @@ import Payment from './pages/Payment';
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 
+import AdminDashBoard from './pages/AdminDashBoard';
+import DashBoard from './pages/DashBoard';
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -54,11 +57,16 @@ const App = () => {
               <Route path='/blogs' element={<Blogs />} />
               <Route path='/blog/:id' element={<BlogFull />} />
               <Route path='/payment' element={<Payment />} />
+              <Route path='/dashBoard' element={<DashBoard />} />
               <Route path='*' element={<h1>Page Not Found</h1>} />
             </Route>
 
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+
+            <Route path='/admin' element={<><Outlet /></>}>
+              <Route index element={<AdminDashBoard />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </SideBarContext.Provider >

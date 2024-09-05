@@ -46,10 +46,6 @@ const Register = () => {
         setFormErrors(errors);
     };
 
-    useEffect(() => {
-        toast.error("hello")
-    }, [])
-
     return <>
         <Box sx={{
             width: '100%',
